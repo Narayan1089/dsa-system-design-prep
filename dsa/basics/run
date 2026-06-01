@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Shortcut from dsa/basics: ./run 01_HelloWorld.java   (or just ./run for default)
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+FILE="${1:-01_HelloWorld.java}"
+if [[ "$FILE" != *.java ]]; then
+  FILE="${FILE}.java"
+fi
+if [[ ! -f "$FILE" ]]; then
+  FILE="$(basename "$FILE")"
+fi
+exec bash "$ROOT/scripts/run-java.sh" "$(cd "$(dirname "$0")" && pwd)/$FILE"
