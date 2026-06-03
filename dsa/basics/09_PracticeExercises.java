@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,7 +18,10 @@ class PracticeExercises {
         System.out.println("max = " + p.findMax(new int[] { 3, 9, 1 }));                   // expect 9
         System.out.println("reverse = " + java.util.Arrays.toString(p.reverse(new int[] { 1, 2, 3 }))); // [3,2,1]
         System.out.println("hasDup = " + p.hasDuplicate(new int[] { 1, 2, 3, 2 }));        // true
-        System.out.println("twoSum indices = " + java.util.Arrays.toString(p.twoSum(new int[] { 2, 7, 11, 15 }, 9))); // [0,1]
+        int[] sample = { 2, 11, 8, 15 };
+        int target = 26;
+        System.out.println("twoSum (HashMap)  = " + java.util.Arrays.toString(p.twoSum(sample, target)));
+        System.out.println("twoSum (brute)     = " + java.util.Arrays.toString(p.twoSumBruteForce(sample, target)));
     }
 
     // TODO 1: return sum of all elements (use a loop)
@@ -35,12 +36,18 @@ class PracticeExercises {
 
     // TODO 2: return largest element
     int findMax(int[] arr) {
-        // your code here
-        return 0;
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
     }
 
     // TODO 3: return new array with elements in reverse order
     int[] reverse(int[] arr) {
+        
         // your code here
         return new int[0];
     }
@@ -52,8 +59,41 @@ class PracticeExercises {
     }
 
     // TODO 5: return indices [i, j] where arr[i] + arr[j] == target (hint: HashMap)
-    int[] twoSum(int[] arr, int target) {
-        // your code here
+
+    /** Brute force: try every pair (i, j). Time O(n²), space O(1). */
+    int[] twoSumBruteForce(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == target) {
+                    return new int[] { i, j };
+                }
+            }
+        }
         return new int[0];
+    }
+
+    /** One pass + HashMap. Time O(n), space O(n). */
+    // int[] twoSum(int[] arr, int target) {
+    //     Map<Integer, Integer> seen = new HashMap<>();
+    //     for (int i = 0; i < arr.length; i++) {
+    //         int need = target - arr[i];
+    //         if (seen.containsKey(need)) 
+    //             return new int[] { seen.get(need), i };
+    //         seen.put(arr[i], i);
+    //     }
+    //     return new int[0];
+    // }
+
+     int[] twoSum(int[] arr, int target) {
+        Map<Integer, Integer> seen = new HashMap<>();
+        for(int i=0; i<arr.length; i++){
+            int need = target - arr[i];
+            if(seen.containsKey(need)) 
+                return new int[] { seen.get(need), i};
+            seen.put(arr[i], i);
+        }
+        
+        return new int[0];
+
     }
 }

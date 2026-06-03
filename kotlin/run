@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+FILE="${1:-practice/PracticeExercises.kt}"
+if [[ "$FILE" != *.kt ]]; then
+  FILE="${FILE}.kt"
+fi
+exec bash "$ROOT/scripts/run-kotlin.sh" "$(cd "$(dirname "$0")" && pwd)/$FILE"
