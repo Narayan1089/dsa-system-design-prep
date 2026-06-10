@@ -51,16 +51,20 @@ Install **Extension Pack for Java** + JDK → click **Run** above `main`.
 | 6 | `06_Arrays.java` | `int[]`, indices |
 | 7 | `07_Methods.java` | Parameters, `return` |
 
-### Part 2 — Collections & Two Sum (08–11)
+### Part 2 — Collections & Two Sum (08–11, 20)
 
 | # | File | Topic |
 |---|------|--------|
 | 8 | `08_ArrayListAndHashMap.java` | `List`, `Map`, `Set` |
+| **20** | **`20_LoopsArraysCollectionsDrills.java`** | **16 drills: arrays, loops, map, set (run & practise)** |
+| — | `notes-20-drills.md` | How to use file 20 |
 | 9 | `09_PracticeExercises.java` | Practice (collections) |
 | — | `09_PracticeExercises_Solutions.java` | Answers |
 | 10 | `10_OOPBasics.java` | Classes, objects |
 | 11 | `11_HashMapTwoSumWalkthrough.java` | Two Sum trace |
 | — | `notes-hashmap-two-sum.md` | HashMap + diagram |
+
+**Recommended:** finish **20** (loops + arrays + map/set) before **12** (stack).
 
 ### Part 3 — DSA patterns (12–19)
 
