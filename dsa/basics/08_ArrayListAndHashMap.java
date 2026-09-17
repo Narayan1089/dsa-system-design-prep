@@ -48,6 +48,8 @@ class ArrayListAndHashMap {
             valueToIndex.put(arr[i], i);
         }
         System.out.println("map get(7) → index " + valueToIndex.get(7));
+        System.out.println("map get(7) → index oo :" + valueToIndex.getOrDefault(7,0));
+
 
         // get returns null if key missing — check before use
         Integer missing = valueToIndex.get(99);

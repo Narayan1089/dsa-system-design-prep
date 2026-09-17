@@ -1,45 +1,52 @@
-# DSA in Kotlin
+# Kotlin track
 
-Same topic layout as `dsa/` (Java), without the hello-world basics track.
+## Start here (Phase 0 — Weeks 1–4)
 
-## Topics
-
-| Folder | Files |
-|--------|--------|
-| `arrays/` | Two Sum, Maximum Subarray |
-| `hashing/` | Contains Duplicate |
-| `collections/` | Maps, lists, sets (Kotlin stdlib) |
-| `practice/` | Exercises + HashMap Two Sum walkthrough |
-| `stack/`, `queue/`, … | Placeholders for future problems |
-
-## Run (needs Kotlin installed)
+**`phase0/`** — Kotlin syntax + logic without AI assist.
 
 ```bash
-brew install kotlin   # or SDKMAN / IntelliJ bundled JDK+Kotlin
+cd kotlin/phase0
+./run week1/01_VariablesAndTypes.kt
 ```
 
-From `kotlin/`:
+Read: `phase0/README.md` and repo root `ROADMAP.md`.
+
+---
+
+## Before LeetCode
+
+Read **`phase1/PRE_LEETCODE_CHECKLIST.md`** — do not skip.
+
+## Phase 1 — DSA (after checkpoint)
+
+**Start:** `phase1/neetcode150-map.md` — NeetCode 150 order → repo folders.
+
+| Folder | NeetCode sections |
+|--------|-------------------|
+| `phase1/` | Map, log, cheat sheet |
+| `arrays/`, `hashing/` | Week 5 |
+| `two-pointers/`, `sliding-window/` | Week 6 |
+| `stack/`, `binary-search/`, `linked-list/` | Week 7 |
+| `trees/` | Week 8 |
+| `heap/`, `backtracking/`, `tries/`, `graphs/` | Week 9 |
+| `graphs-advanced/`, `dp/`, `greedy/`, `intervals/`, `math-geometry/`, `bit-manipulation/` | Week 10 |
 
 ```bash
-./run practice/HashMapTwoSumWalkthrough.kt
 ./run practice/PracticeExercises.kt
 ```
 
-From repo root:
+## Run (needs Kotlin)
 
 ```bash
-bash scripts/run-kotlin.sh kotlin/practice/PracticeExercises.kt
+brew install kotlin
+bash scripts/run-kotlin.sh kotlin/phase0/week1/01_VariablesAndTypes.kt
 ```
 
-Files with `fun main()` run directly. Solution-only files (e.g. `arrays/TwoSum.kt`) are for LeetCode-style copy or tests.
-
-## Java vs Kotlin quick map
+## Java vs Kotlin
 
 | Java | Kotlin |
 |------|--------|
-| `int[]` | `IntArray` |
-| `new int[] { a, b }` | `intArrayOf(a, b)` |
-| `HashMap<K,V>` | `hashMapOf()` / `HashMap()` |
-| `for (int i = 0; …)` | `for (i in arr.indices)` |
-| `map.get(k) != null` | `map[k]?.let { }` or `k in map` |
-| `List<Integer>` | `mutableListOf<Int>()` |
+| `int[]` | `IntArray` / `List<Int>` |
+| `HashMap` | `hashMapOf()` / `mutableMapOf()` |
+| `for (int i…)` | `for (i in list.indices)` |
+| `null` checks | `?`, `?:`, `?.let` |

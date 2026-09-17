@@ -1,12 +1,16 @@
 /**
- * Contains Duplicate — HashSet, same idea as dsa/hashing/ContainsDuplicate.java
+ * LC 217 — Pattern: HashSet
+ * Pasted from phase1/Practice.kt (your solve).
  */
 class ContainsDuplicate {
     fun containsDuplicate(nums: IntArray): Boolean {
-        val seen = hashSetOf<Int>()
+        var set = mutableSetOf<Int>()
         for (n in nums) {
-            if (n in seen) return true
-            seen.add(n)
+            if (n !in set) {
+                set.add(n)
+            } else {
+                return true
+            }
         }
         return false
     }

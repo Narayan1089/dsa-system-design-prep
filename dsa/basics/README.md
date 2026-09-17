@@ -55,8 +55,10 @@ Install **Extension Pack for Java** + JDK → click **Run** above `main`.
 
 | # | File | Topic |
 |---|------|--------|
-| 8 | `08_ArrayListAndHashMap.java` | `List`, `Map`, `Set` |
-| **20** | **`20_LoopsArraysCollectionsDrills.java`** | **16 drills: arrays, loops, map, set (run & practise)** |
+| 8 | `08_ArrayListAndHashMap.java` | `List`, `Map`, `Set` intro |
+| **21** | **`21_ArrayListMapSetSyntax.java`** | **Syntax only — array, list, map, set (run & copy)** |
+| — | `notes-syntax-collections.md` | One-page cheat sheet |
+| **20** | **`20_LoopsArraysCollectionsDrills.java`** | **16 drills with loops** |
 | — | `notes-20-drills.md` | How to use file 20 |
 | 9 | `09_PracticeExercises.java` | Practice (collections) |
 | — | `09_PracticeExercises_Solutions.java` | Answers |

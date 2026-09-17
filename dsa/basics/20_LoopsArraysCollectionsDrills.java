@@ -17,7 +17,7 @@ import java.util.Set;
  */
 class LoopsArraysCollectionsDrills {
 
-    static final boolean PRACTICE_MODE = false; // flip to true when you code practice_* methods
+    static final boolean PRACTICE_MODE = true; // flip to true when you code practice_* methods
 
     public static void main(String[] args) {
         if (PRACTICE_MODE) {
@@ -141,6 +141,7 @@ class LoopsArraysCollectionsDrills {
         practice_moveZeroes(zeros);
         check("moveZeroes", Arrays.toString(zeros), "[1, 3, 12, 0, 0]");
         check("twoSumBrute", Arrays.toString(practice_twoSumBrute(arr(2, 11, 8, 15), 26)), "[1, 3]");
+        check("frequency", practice_frequency(arr(1, 2, 2, 2, 3)), 2);
         check("mostFrequent", practice_mostFrequent(arr(1, 2, 2, 2, 3)), 2);
         check("twoSumMap", Arrays.toString(practice_twoSumMap(arr(2, 7, 11, 15), 9)), "[0, 1]");
         check("firstAdjacentDup", practice_firstAdjacentDupIndex(arr(1, 2, 2, 3)), 2);
@@ -218,8 +219,25 @@ class LoopsArraysCollectionsDrills {
         return new int[0];
     }
 
+    static Map<Integer, Integer> practice_frequency(int[] a) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        for (int x : a) {
+            freq.put(x, freq.getOrDefault(x, 0) + 1);
+        }
+        return freq;
+    }
+
     static int practice_mostFrequent(int[] a) {
-        return 0;
+        Map<Integer, Integer> freq = practice_frequency(a);
+        int bestVal = a[0];
+        int bestCount = 0;
+        for (Map.Entry<Integer, Integer> e : freq.entrySet()) {
+            if (e.getValue() > bestCount) {
+                bestCount = e.getValue();
+                bestVal = e.getKey();
+            }
+        }
+        return bestVal;
     }
 
     static int[] practice_twoSumMap(int[] a, int target) {
